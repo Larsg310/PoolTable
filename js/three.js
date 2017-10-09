@@ -6858,7 +6858,7 @@
                 if (geometry.boundingSphere === null)
                     geometry.computeBoundingSphere();
                 sphere.copy(geometry.boundingSphere)
-                .applyMatrix4(object.matrixWorld);
+                    .applyMatrix4(object.matrixWorld);
                 return this.intersectsSphere(sphere);
             };
         }(),
@@ -12653,8 +12653,8 @@
                     var uniforms = cache.get(light);
                     // (a) intensity controls irradiance of entire light
                     uniforms.color
-                    .copy(color)
-                    .multiplyScalar(intensity / ( light.width * light.height ));
+                        .copy(color)
+                        .multiplyScalar(intensity / ( light.width * light.height ));
                     // (b) intensity controls the radiance per light area
                     // uniforms.color.copy( color ).multiplyScalar( intensity );
                     uniforms.position.setFromMatrixPosition(light.matrixWorld);
@@ -12903,11 +12903,11 @@
     function replaceLightNums(string, parameters)
     {
         return string
-        .replace(/NUM_DIR_LIGHTS/g, parameters.numDirLights)
-        .replace(/NUM_SPOT_LIGHTS/g, parameters.numSpotLights)
-        .replace(/NUM_RECT_AREA_LIGHTS/g, parameters.numRectAreaLights)
-        .replace(/NUM_POINT_LIGHTS/g, parameters.numPointLights)
-        .replace(/NUM_HEMI_LIGHTS/g, parameters.numHemiLights);
+            .replace(/NUM_DIR_LIGHTS/g, parameters.numDirLights)
+            .replace(/NUM_SPOT_LIGHTS/g, parameters.numSpotLights)
+            .replace(/NUM_RECT_AREA_LIGHTS/g, parameters.numRectAreaLights)
+            .replace(/NUM_POINT_LIGHTS/g, parameters.numPointLights)
+            .replace(/NUM_HEMI_LIGHTS/g, parameters.numHemiLights);
     }
 
     function parseIncludes(string)
@@ -16164,7 +16164,7 @@
                     if (sortObjects)
                     {
                         _vector3.setFromMatrixPosition(object.matrixWorld)
-                        .applyMatrix4(_projScreenMatrix);
+                            .applyMatrix4(_projScreenMatrix);
                     }
                     currentRenderList.push(object, null, object.material, _vector3.z, null);
                 } else if (object.isMesh || object.isLine || object.isPoints)
@@ -16178,7 +16178,7 @@
                         if (sortObjects)
                         {
                             _vector3.setFromMatrixPosition(object.matrixWorld)
-                            .applyMatrix4(_projScreenMatrix);
+                                .applyMatrix4(_projScreenMatrix);
                         }
                         var geometry = objects.update(object);
                         var material = object.material;
@@ -30191,10 +30191,10 @@
                 var face = faces[i];
                 var normal = face.normal;
                 v1.copy(vertices[face.a])
-                .add(vertices[face.b])
-                .add(vertices[face.c])
-                .divideScalar(3)
-                .applyMatrix4(matrixWorld);
+                    .add(vertices[face.b])
+                    .add(vertices[face.c])
+                    .divideScalar(3)
+                    .applyMatrix4(matrixWorld);
                 v2.copy(normal).applyMatrix3(normalMatrix).normalize().multiplyScalar(this.size).add(v1);
                 position.setXYZ(idx, v1.x, v1.y, v1.z);
                 idx = idx + 1;

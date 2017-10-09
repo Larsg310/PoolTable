@@ -5,11 +5,17 @@
         <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
         <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
         <script src="js/three.js"></script>
-        <!--<script src="js/pool.js"></script>-->
+        <script src="js/controls.js"></script>
     </head>
     <body style="overflow:hidden; margin:0">
-        <div style="position:absolute;top:10px;left:10px">
-            <!-- overlay -->
+        <div style="position:absolute;top:10px;left:10px;color:#999999;">
+            <b id="player1type">Player 1: Undetermined</b><br>
+            <b id="player1count">Amount: 0</b><br>
+            <br>
+            <b id="player2type">Player 2: Undetermined</b><br>
+            <b id="player2count">Amount: 0</b><br>
+            <br>
+            <b id="turn">Turn: Player 1</b>
         </div>
         <div id="PoolCanvas">
             <script src="js/pool.js"></script>
